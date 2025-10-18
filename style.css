@@ -1,185 +1,187 @@
-/* Customization Variables */
+/* Variáveis de customização */
 :root {
-    /* Colors */
-    --color-page-background: #50AFC9;
-    --color-main-container-background: #FF5B70;
-    --color-inner-container-background: #FFF7F4;
-    --color-border: #9E0E2B;
-    --color-button-background: #FFF;
-    --color-heading-text: #FFF;
-    --color-button-text: #9E0E2B;
-    --color-message-text: #9E0E2B;
-    
-    /* Images */
-    --image-path-background: url('assets/main-bg.png');
-    --image-path-content: url('assets/image-content/image-1.png');
-    
-    /* Fonts */
-    --font-family-main: "Pixelify Sans", sans-serif;
-    --font-size-large: 1.75rem;
-    --font-size-medium: 1.5635rem;
-    
-    /* Border Radius */
-    --border-radius: 0.31269rem;
-    
-    /* Border Width */
-    --border-width-main: 3px;
-    --border-width-inner: 3.413px;
-    
-    /* Spacing */
-    --padding-container: 0.62538rem;
-    --gap-icons: 0.375rem;
-    --gap-button: 0.58369rem;
-  }
-  
-  /* Base styles */
+  /* Colors */
+  --color-page-background: #50AFC9;
+  --color-main-container-background: #FF5B70;
+  --color-inner-container-background: #FFF7F4;
+  --color-border: #9E0E2B;
+  --color-button-background: #FFF;
+  --color-heading-text: #FFF;
+  --color-button-text: #9E0E2B;
+  --color-message-text: #9E0E2B;
+
+  /* Images */
+  --image-path-background: url('assets/main-bg.png');
+  --image-path-content: url('assets/image-content/image-1.png');
+
+  /* Fonts */
+  --font-family-main: "Pixelify Sans", sans-serif;
+  --font-size-large: 1.75rem;
+  --font-size-medium: 1.5635rem;
+
+  /* Border Radius */
+  --border-radius: 0.31269rem;
+
+  /* Border Width */
+  --border-width-main: 3px;
+  --border-width-inner: 3.413px;
+
+  /* Spacing */
+  --padding-container: 0.62538rem;
+  --gap-icons: 0.375rem;
+  --gap-button: 0.58369rem;
+}
+
+/* Estilos base */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-page-background) var(--image-path-background) bottom center no-repeat;
+  background-size: 100% auto;
+  /* Desktop view */
+}
+
+h1 {
+  color: var(--color-heading-text);
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-large);
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+}
+
+/* Estilos do container */
+.container {
+  position: relative;
+  width: 420px;
+  aspect-ratio: 420 / 330;
+  border: var(--border-width-main) solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: var(--color-main-container-background);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  padding: var(--padding-container);
+}
+
+/* Container interno */
+.inner-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 430 / 280;
+  border: var(--border-width-inner) solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: var(--color-inner-container-background);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 12%;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ícones de reduzir/fechar */
+.shrink-close-icons {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-icons);
+}
+
+/* Ícones */
+.shrink-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 2px;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Conteúdo da imagem */
+.image-content {
+  position: relative;
+  height: 65%;
+  aspect-ratio: 142.5 / 171;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: var(--image-path-content) no-repeat center;
+  background-size: contain;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+/* Botão principal */
+#main-button {
+  position: relative;
+  height: 16.5%;
+  aspect-ratio: 175 / 44;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-button);
+  border: var(--border-width-inner) solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: var(--color-button-background);
+  color: var(--color-button-text);
+  text-align: center;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-medium);
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+  transition: transform 0.2s ease;
+}
+
+#main-button:hover {
+  transform: scale(1.05);
+}
+
+.final-message {
+  display: none;
+  /* Hide it initially */
+  color: var(--color-message-text);
+  text-align: center;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-large);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 4px;
+}
+
+/* Estilos responsivos para mobile */
+@media (max-width: 768px) {
   body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--color-page-background) var(--image-path-background) bottom center no-repeat;
-    background-size: 100% auto; /* Desktop view */
+    background-size: cover;
+    background-position: bottom center;
   }
-  
-  h1 { 
-    color: var(--color-heading-text);
-    font-family: var(--font-family-main);
-    font-size: var(--font-size-large);
-    font-weight: 400;
-    font-style: normal;
-    line-height: normal;
-  }
-  
-  /* Container styles */
+
   .container {
-    position: relative;
-    width: 420px;
-    aspect-ratio: 420 / 330;
-    border: var(--border-width-main) solid var(--color-border);
-    border-radius: var(--border-radius);
-    background: var(--color-main-container-background);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-    padding: var(--padding-container);
+    margin: 1rem;
   }
-  
-  /* Inner container */
-  .inner-container {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 430 / 280;
-    border: var(--border-width-inner) solid var(--color-border);
-    border-radius: var(--border-radius);
-    background: var(--color-inner-container-background);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+
+  h1 {
+    font-size: calc(var(--font-size-large) - 0.25rem);
   }
-  
-  /* Header */
-  header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 12%;
-    text-align: center;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Shrink Close Icons */
-  .shrink-close-icons {
-    display: flex;
-    align-items: center;
-    gap: var(--gap-icons);
-  }
-  
-  /* Icons */
-  .shrink-icon {
-    width: 24px;
-    height: 24px;
-    object-fit: cover;
-    border-radius: 2px;
-    opacity: 1;
-    transition: opacity 0.2s ease-in-out;
-  }
-  
-  /* Image Content */
-  .image-content {
-    position: relative;
-    height: 65%;
-    aspect-ratio: 142.5 / 171;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background: var(--image-path-content) no-repeat center;
-    background-size: contain;
-    transition: opacity 0.5s ease;
-    opacity: 1;
-  }
-  
-  /* Main Button */
-  #main-button {
-    position: relative;
-    height: 16.5%;
-    aspect-ratio: 175 / 44;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--gap-button);
-    border: var(--border-width-inner) solid var(--color-border);
-    border-radius: var(--border-radius);
-    background: var(--color-button-background);
-    color: var(--color-button-text);
-    text-align: center;
-    font-family: var(--font-family-main);
-    font-size: var(--font-size-medium);
-    font-weight: 400;
-    font-style: normal;
-    line-height: normal;
-    transition: transform 0.2s ease;
-  }
-  
-  #main-button:hover {
-    transform: scale(1.05);
-  }
-  
-  .final-message {
-    display: none; /* Hide it initially */
-    color: var(--color-message-text);
-    text-align: center;
-    font-family: var(--font-family-main);
-    font-size: var(--font-size-large);
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-top: 4px;
-  }
-  
-  /* Responsive Styles for Mobile */
-  @media (max-width: 768px) {
-    body {
-      background-size: cover;
-      background-position: bottom center;
-    }
-  
-    .container {
-      margin: 1rem;
-    }
-  
-    h1 {
-      font-size: calc(var(--font-size-large) - 0.25rem);
-    }
-  }
+}

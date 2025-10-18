@@ -1,8 +1,8 @@
 // =============================================
-// STEP 1: Set up the image array 
+// PASSO 1: Configurar o array de imagens
 // =============================================
-// Array of all images to cycle through
-// Customize these paths to your own images
+// Array com todas as imagens para percorrer
+// Personalize esses caminhos para as suas próprias imagens
 const images = [
   './assets/image-content/image-1.png',
   './assets/image-content/image-2.png',
@@ -13,61 +13,61 @@ const images = [
 ];
 
 // =============================================
-// STEP 2: Reference HTML elements 
+// PASSO 2: Referenciar elementos HTML
 // =============================================
-// Connect to the elements we need to change
+// Conectar aos elementos que precisamos alterar
 const imageContent = document.querySelector('.image-content');  // Image container
 const mainButton = document.getElementById('main-button');      // Image switch button
 const finalMessage = document.querySelector('.final-message');  // Final message
 
 // =============================================
-// STEP 3: Track what image we're at 
+// PASSO 3: Rastrear em qual imagem estamos
 // =============================================
-// Start with the first image (index 0)
+// Começar com a primeira imagem (índice 0)
 let currentIndex = 0;
 
 // =============================================
-// STEP 4: Update image function 
+// PASSO 4: Função de atualização da imagem
 // =============================================
-// Function to change images with fade effect
+// Função para trocar imagens com efeito de fade
 function updateImage() {
-  // Fade out current image
+  // Esmaecer a imagem atual
   imageContent.style.opacity = 0;
   
-  // Preload next image
+  // Pré-carregar a próxima imagem
   const img = new Image();
   img.src = images[currentIndex];
   
-  // When image is loaded
+  // Quando a imagem for carregada
   img.onload = () => {
-    // Change to new image
+    // Trocar pela nova imagem
     imageContent.style.backgroundImage = `url('${images[currentIndex]}')`;
     
-    // Fade in new image
+    // Aparecer a nova imagem (fade in)
     imageContent.style.opacity = 1;
   };
 }
 
 // =============================================
-// STEP 5: Initial image display 
+// PASSO 5: Exibição inicial da imagem
 // =============================================
-// Show first image when page loads
+// Exibir a primeira imagem quando a página carregar
 updateImage();
 
 // =============================================
-// STEP 6: Button click handler 
+// PASSO 6: Manipulador de clique do botão
 // =============================================
-// Change image when button is clicked
+// Trocar imagem quando o botão for clicado
 mainButton.addEventListener('click', () => {
-  // Go to next image
+  // Ir para a próxima imagem
   currentIndex++;
   
-  // Update if not at the end
+  // Atualizar se não for o fim da lista
   if (currentIndex < images.length) {
     updateImage();
   }
   
-  // Once at the last image, show the final message and hide the button 
+  // Quando chegar na última imagem, mostrar a mensagem final e esconder o botão
   if (currentIndex === images.length - 1) {
     mainButton.style.display = 'none';
     finalMessage.style.display = 'block';

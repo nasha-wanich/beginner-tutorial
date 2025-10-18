@@ -1,188 +1,188 @@
-# Image Changer Pop-up
+ # Pop-up Troca de Imagens
 
-A customizable, interactive pop-up that cycles through images when a button is clicked
-
-
-## Project Overview
-
-This project creates a stylized pop-up window that displays a series of images. Each time the user clicks the button, the image changes to the next one in sequence. When the last image is reached, the button disappears and a final message is displayed.
-
-## What you'll learn
-
-* CSS Variables for easy customization
-* Basic HTML flex structure
-* JavaScript event handling
-* DOM manipulation
-
-## Features
-
-- Customizable colors, fonts, and styling through CSS variables
-- Customizable background image, main image sequence, and all the texts 
-- Smooth fade transitions between images
-- Mobile-responsive design
-- Decorative UI elements (close and shrink buttons)
-
-## 📁 Project Structure
-
-```
-image-changer-popup/
-├── assets/
-│   ├── image-content/
-│   │   ├── image-1.png
-│   │   ├── image-2.png
-│   │   ├── image-3.png
-│   │   ├── image-4.png
-│   │   ├── image-5.png
-│   │   └── image-6.png
-│   ├── close-icon.png
-│   ├── favicon.png
-│   ├── main-bg.png
-│   └── shrink-icon.png
-├── index.html
-├── style.css
-└── index.js
-```
-
-## How It Works
-
-1. The page loads with a stylized pop-up container
-2. The first image is displayed automatically
-3. When the user clicks the button:
-   - The current image fades out
-   - The next image is preloaded
-   - Once loaded, the new image fades in
-4. After reaching the final image:
-   - The button disappears
-   - A final message is displayed
-  
-## How to recreate this project 
-1. Clone the project from GitHub
-2. Open the project in your preferred text editor (VScode or any text editors)
-3. Review the project structure and files:
-   - `index.html`: Contains the basic structure of the pop-up
-   - `style.css`: Contains all styling and visual customization options
-   - `index.js`: Handles the image changing functionality
-4. Open `index.html` in your browser to view the project:
-   - Double-click the file in your file explorer
-5. Customize the project by following the instructions in the code:
-   - Modify CSS variables in `style.css` to change colors, fonts, and styling
-   - Replace images in the `assets` folder (see Artwork Images Requirements above)
-   - Update text content in the HTML file
-6. For the JavaScript functionality:
-   - I commented the code for the functionality of each line so I recommend trying to redo it yourself :) 
-7. Test your changes by refreshing the browser to see updates in real-time
-8. For deployment, follow the Netlify hosting instructions in the section below
-
-*Make sure the project structure and file names match the current names you have, or rename them in the code.
-
-## Customization Options
-
-### Artwork Images Requirements
-- Animation sequence (4-8 images): 300 x 360px - transparent background png recommended
-- Background image: 2093 x 1132 px
-- Favicon: flexible sizing, mine is 238 x 279px - transparent background png recommended
-- Close and shrink icons: flexible sizing as long as they're square aspect ratio, mine is 287 x 287px
-
-**Make sure the project structure and file names match the current names you have, or rename them in the code.
-
-If you would like to change the dimensions of images in this project, you'll need to update the corresponding aspect ratio in the CSS. Here are the specific sections to modify:
-
-For the image content (animation area):
-```css
-.image-content {
-  /* ... other properties ... */
-  height: 65%;
-  aspect-ratio: 142.5 / 171; /* Change these values to match your animation dimensions (300x360px) */
-}
-``` 
-
-For the background image sizing:
-```css
-body {
-  /* ... other properties ... */
-  background-size: 100% auto; /* Adjust based on your background image dimensions (2093x1132px) */
-}
-```
+ Uma pop-up interativa e personalizável que alterna entre imagens quando um botão é clicado
 
 
-### Colors and Styling
+ ## Visão Geral do Projeto
 
-All visual elements can be customized through CSS variables in the `:root` section of `style.css`:
+ Este projeto cria uma janela pop-up estilizada que exibe uma sequência de imagens. A cada clique do usuário no botão, a imagem muda para a próxima da sequência. Quando a última imagem é exibida, o botão desaparece e uma mensagem final é mostrada.
 
-```css
-:root {
-  /* Colors */
-  --color-page-background: #50AFC9;
-  --color-main-container-background: #FF5B70;
-  --color-inner-container-background: #FFF7F4;
-  --color-border: #9E0E2B;
-  --color-button-background: #FFF;
-  --color-heading-text: #FFF;
-  --color-button-text: #9E0E2B;
-  --color-message-text: #9E0E2B;
-  
-  /* Images */
-  --image-path-background: url('assets/main-bg.png');
-  --image-path-content: url('assets/image-content/image-1.png');
-  
-  /* Fonts */
-  --font-family-main: "Pixelify Sans", sans-serif;
-  /* ... and more variables ... */
-}
-```
+ ## O que você vai aprender
 
-### Text Content
+ * Variáveis CSS para fácil customização
+ * Estrutura básica de HTML com flexbox
+ * Manipulação de eventos em JavaScript
+ * Manipulação do DOM
 
-Modify the following in the HTML file:
+ ## Recursos (Features)
 
-- Page title: `<title>For you &lt;3</title>`
-- Header text: `<h1>For you &lt;3</h1>`
-- Button text: `<button id="waterButton">Grow!</button>`
-- Final message: `<div class="final-message">Have a good day!</div>`
+ - Cores, fontes e estilos personalizáveis através de variáveis CSS
+ - Imagem de fundo e sequência principal de imagens personalizáveis, além de todo o texto
+ - Transições suaves (fade) entre imagens
+ - Design responsivo para dispositivos móveis
+ - Elementos decorativos de UI (botões de fechar e reduzir)
 
-### Images
+ ## 📁 Estrutura do Projeto
 
-1. Replace the images in the `assets/image-content/` directory with your own
-2. Make sure to keep the same filenames or update the paths in the JavaScript array
-3. You can add more images by adding more entries to the array
+ ```
+ image-changer-popup/
+ ├── assets/
+ │   ├── image-content/
+ │   │   ├── image-1.png
+ │   │   ├── image-2.png
+ │   │   ├── image-3.png
+ │   │   ├── image-4.png
+ │   │   ├── image-5.png
+ │   │   └── image-6.png
+ │   ├── close-icon.png
+ │   ├── favicon.png
+ │   ├── main-bg.png
+ │   └── shrink-icon.png
+ ├── index.html
+ ├── style.css
+ └── index.js
+ ```
 
-```javascript
-const images = [
-  './assets/image-content/image-1.png',
-  './assets/image-content/image-2.png',
-  // Add more images here...
-];
-```
+ ## Como funciona
 
-## 🌐 Hosting on Netlify
+ 1. A página carrega com um container pop-up estilizado
+ 2. A primeira imagem é exibida automaticamente
+ 3. Quando o usuário clica no botão:
+    - A imagem atual é esmaecida (fade out)
+    - A próxima imagem é pré-carregada
+    - Assim que carregada, a nova imagem é exibida com fade in
+ 4. Após chegar na imagem final:
+    - O botão desaparece
+    - Uma mensagem final é exibida
+   
+ ## Como recriar este projeto
+ 1. Clone o repositório do GitHub
+ 2. Abra o projeto no seu editor de código preferido (VS Code ou outro)
+ 3. Revise a estrutura e os arquivos do projeto:
+    - `index.html`: Contém a estrutura básica do pop-up
+    - `style.css`: Contém todo o estilo e opções de customização visual
+    - `index.js`: Controla a funcionalidade de troca de imagens
+ 4. Abra `index.html` no seu navegador para visualizar o projeto:
+    - Dê um duplo clique no arquivo no seu explorador de arquivos
+ 5. Personalize o projeto seguindo as instruções nos arquivos:
+    - Modifique as variáveis CSS em `style.css` para alterar cores, fontes e estilos
+    - Substitua as imagens na pasta `assets` (veja os requisitos de arte abaixo)
+    - Atualize os textos diretamente no arquivo HTML
+ 6. Para a funcionalidade em JavaScript:
+    - O código está comentado linha a linha, recomendo tentar reescrevê-lo para praticar :) 
+ 7. Teste suas alterações atualizando a página no navegador
+ 8. Para deploy, siga as instruções do Netlify na seção abaixo
 
-You can deploy this project using Netlify's free plan:
+ *Certifique-se de que a estrutura do projeto e os nomes de arquivo coincidam com os mencionados aqui, ou renomeie-os conforme necessário.*
 
-**Prepare your project**:
-* Make sure your files are named correctly: `index.html` and `index.js` (if you renamed them)
-* Ensure all file paths are correct (case-sensitive)
+ ## Opções de customização
 
-**Sign up for Netlify**:
-* Go to netlify.com and sign up for a free account
-* You can sign up using GitHub, GitLab, Bitbucket, or email
+ ### Requisitos das Imagens (Artwork)
+ - Sequência de animação (4-8 imagens): 300 x 360px - recomenda-se PNG com fundo transparente
+ - Imagem de fundo: 2093 x 1132 px
+ - Favicon: tamanho flexível, meu exemplo é 238 x 279px - recomenda-se PNG com fundo transparente
+ - Ícones de fechar e reduzir: tamanho flexível, desde que tenham aspecto quadrado; meu exemplo é 287 x 287px
 
-**Deploy your site**: 
-* Simply drag and drop your project folder onto the Netlify dashboard
-* Netlify will automatically deploy your site
+ **Verifique se a estrutura do projeto e os nomes dos arquivos correspondem aos listados acima, ou atualize os caminhos no código.**
 
-**Configure your site**:
-* After deployment, you can customize your site name
-* Go to "Site settings" → "Change site name"
-* Your site will be available at `your-site-name.netlify.app`
+ Se quiser alterar as dimensões das imagens neste projeto, será necessário atualizar a proporção (aspect-ratio) correspondente no CSS. Seguem as seções específicas a modificar:
 
-**Update your site**:
-* If you used the drag and drop method, simply drag and drop your folder again
-* If you connected to Git, just push changes to your repository
+ Para a área de conteúdo da imagem (área da animação):
+ ```css
+ .image-content {
+   /* ... outras propriedades ... */
+   height: 65%;
+   aspect-ratio: 142.5 / 171; /* Altere esses valores para corresponder às dimensões da sua animação (300x360px) */
+ }
+ ```
+
+ Para o dimensionamento da imagem de fundo:
+ ```css
+ body {
+   /* ... outras propriedades ... */
+   background-size: 100% auto; /* Ajuste com base nas dimensões da sua imagem de fundo (2093x1132px) */
+ }
+ ```
 
 
-## Project Extension Ideas
+ ### Cores e Estilo
 
-- Add click functionality to the close and shrink icons
-- Implement a restart button after reaching the final image
-- Add sound effects for button clicks and transitions
+ Todos os elementos visuais podem ser personalizados através de variáveis CSS na seção `:root` de `style.css`:
+
+ ```css
+ :root {
+   /* Cores */
+   --color-page-background: #50AFC9;
+   --color-main-container-background: #FF5B70;
+   --color-inner-container-background: #FFF7F4;
+   --color-border: #9E0E2B;
+   --color-button-background: #FFF;
+   --color-heading-text: #FFF;
+   --color-button-text: #9E0E2B;
+   --color-message-text: #9E0E2B;
+   
+   /* Imagens */
+   --image-path-background: url('assets/main-bg.png');
+   --image-path-content: url('assets/image-content/image-1.png');
+   
+   /* Fontes */
+   --font-family-main: "Pixelify Sans", sans-serif;
+   /* ... e mais variáveis ... */
+ }
+ ```
+
+ ### Conteúdo de Texto
+
+ Modifique os seguintes itens no arquivo HTML:
+
+ - Título da página: `<title>For you &lt;3</title>`
+ - Texto do cabeçalho: `<h1>For you &lt;3</h1>`
+ - Texto do botão: `<button id="waterButton">Grow!</button>`
+ - Mensagem final: `<div class="final-message">Have a good day!</div>`
+
+ ### Imagens
+
+ 1. Substitua as imagens em `assets/image-content/` pelas suas
+ 2. Mantenha os mesmos nomes de arquivo ou atualize os caminhos no array do JavaScript
+ 3. Você pode adicionar mais imagens incluindo novas entradas no array
+
+ ```javascript
+ const images = [
+   './assets/image-content/image-1.png',
+   './assets/image-content/image-2.png',
+   // Adicione mais imagens aqui...
+ ];
+ ```
+
+ ## 🌐 Hospedagem no Netlify
+
+ Você pode publicar este projeto usando o plano gratuito do Netlify:
+
+ **Prepare seu projeto**:
+ * Certifique-se de que os arquivos estejam nomeados corretamente: `index.html` e `index.js` (se você os renomeou)
+ * Garanta que todos os caminhos dos arquivos estejam corretos (são sensíveis a maiúsculas/minúsculas em alguns hosts)
+
+ **Criar conta no Netlify**:
+ * Acesse netlify.com e crie uma conta gratuita
+ * Você pode se cadastrar usando GitHub, GitLab, Bitbucket ou e-mail
+
+ **Fazer o deploy do site**: 
+ * Arraste e solte a pasta do projeto no painel do Netlify
+ * O Netlify fará o deploy automaticamente
+
+ **Configurar o site**:
+ * Após o deploy, você pode customizar o nome do site
+ * Vá em "Site settings" → "Change site name"
+ * Seu site ficará disponível em `your-site-name.netlify.app`
+
+ **Atualizar o site**:
+ * Se usou o método arrastar/soltar, basta arrastar a pasta novamente para atualizar
+ * Se conectou via Git, faça push das mudanças no repositório
+
+
+ ## Ideias para estender o projeto
+
+ - Adicionar funcionalidade de clique nos ícones de fechar e reduzir
+ - Implementar um botão de reiniciar após alcançar a imagem final
+ - Adicionar efeitos sonoros para cliques e transições
 
