@@ -2,8 +2,8 @@
 :root {
   /* Colors */
   --color-page-background: #50AFC9;
-  --color-main-container-background: #FF5B70;
-  --color-inner-container-background: #FFF7F4;
+  --color-main-container-background: #D97083;
+  --color-inner-container-background: #FDF2F1;
   --color-border: #9E0E2B;
   --color-button-background: #FFF;
   --color-heading-text: #FFF;
@@ -11,7 +11,7 @@
   --color-message-text: #9E0E2B;
 
   /* Images */
-  --image-path-background: url('assets/main-bg.png');
+  --image-path-background: url('assets/fundo.png');
   --image-path-content: url('assets/image-content/image-1.png');
 
   /* Fonts */

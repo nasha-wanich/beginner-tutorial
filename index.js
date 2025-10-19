@@ -4,12 +4,12 @@
 // Array com todas as imagens para percorrer
 // Personalize esses caminhos para as suas próprias imagens
 const images = [
-  './assets/image-content/image-1.png',
-  './assets/image-content/image-2.png',
-  './assets/image-content/image-3.png',
-  './assets/image-content/image-4.png',
-  './assets/image-content/image-5.png',
-  './assets/image-content/image-6.png'
+  './assets/image-content/pancake-1.png',
+  './assets/image-content/pancake-2.png',
+  './assets/image-content/pancake-3.png',
+  './assets/image-content/pancake-4.png',
+  './assets/image-content/pancake-5.png',
+  './assets/image-content/pancake-6.png'
 ];
 
 // =============================================
